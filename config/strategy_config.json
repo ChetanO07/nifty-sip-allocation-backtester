@@ -1,0 +1,71 @@
+{
+    "excel_file_name": "NIFTY 50_Historical_PR_01011990to11102024.csv",
+
+    "start_date": "1999-01-01",
+    "end_date": null,
+
+    "monthly_investment": 1000,
+    "investment_frequency": "monthly",
+    "investment_day_rule": "first_trading_day",
+
+    "date_column": "Date",
+    "price_column": "Close",
+
+    "bond_annual_return": 0.065,
+    "bond_compounding": "continuous",
+
+    "allocation_rules": [
+        {
+            "min_drawdown": 0.00,
+            "max_drawdown": 0.20,
+            "equity_allocation": 0.80,
+            "bond_allocation": 0.20
+        },
+        {
+            "min_drawdown": 0.20,
+            "max_drawdown": 0.30,
+            "equity_allocation": 0.90,
+            "bond_allocation": 0.10
+        },
+        {
+            "min_drawdown": 0.30,
+            "max_drawdown": 1.00,
+            "equity_allocation": 1.00,
+            "bond_allocation": 0.00
+        }
+    ],
+
+    "bond_shift_rules": [
+        {
+            "trigger_drawdown": 0.10,
+            "bond_shift_percentage": 0.20,
+            "trigger_once_per_ath_cycle": true
+        },
+        {
+            "trigger_drawdown": 0.20,
+            "bond_shift_percentage": 0.40,
+            "trigger_once_per_ath_cycle": true
+        },
+        {
+            "trigger_drawdown": 0.30,
+            "bond_shift_percentage": 0.70,
+            "trigger_once_per_ath_cycle": true
+        },
+        {
+            "trigger_drawdown": 0.40,
+            "bond_shift_percentage": 1.00,
+            "trigger_once_per_ath_cycle": true
+        }
+    ],
+
+    "trigger_mode": "highest_only",
+
+    "metrics": {
+        "show_roi": true,
+        "show_max_drawdown": true,
+        "show_cagr": true,
+        "show_equity_bond_split": true
+    },
+
+    "output_file_name": "dynamic_asset_allocation_results.xlsx"
+}
